@@ -15,13 +15,17 @@ export default async function OnlinePayment(
   }
 
   // Use provided URL, or fallback to environment variable, or use Vercel URL
-  const baseUrl = url || process.env.Next_URL || process.env.VERCEL_URL 
+  const baseUrl = url || process.env.Next_URL || (process.env.VERCEL_URL 
     ? `https://${process.env.VERCEL_URL}` 
-    : 'http://localhost:3000';
+    : 'http://localhost:3000');
+
+  // Create success and cancel URLs
+  const successUrl = `${baseUrl}/payment-success`;
+  const cancelUrl = `${baseUrl}/payment-cancel`;
 
   try {
     const res = await fetch(
-      `${process.env.Api_URL}api/v1/orders/checkout-session/${cartId}?url=${baseUrl}`,
+      `${process.env.Api_URL}api/v1/orders/checkout-session/${cartId}?url=${successUrl}&cancel_url=${cancelUrl}`,
       {
         method: "POST",
         headers: {
