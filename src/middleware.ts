@@ -24,11 +24,6 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // Allow payment success and cancel pages without authentication
-  if (pathname === "/payment-success" || pathname === "/payment-cancel") {
-    return NextResponse.next();
-  }
-
   if (token) {
     if (pathname === "/login" || pathname === "/register" || pathname === "/forgetpassword") {
       return NextResponse.redirect(new URL("/", request.url));
@@ -58,8 +53,6 @@ export const config = {
     "/wishlist",
     "/resetpassword",
     "/resetcode",
-    "/forgetpassword",
-    "/payment-success",
-    "/payment-cancel"
+    "/forgetpassword"
   ],
 };
