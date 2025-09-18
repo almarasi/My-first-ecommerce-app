@@ -1,0 +1,37 @@
+"use server";
+
+import axios from "axios";
+
+export default async function getCategories() {
+  try {
+    const res = await fetch(`${process.env.Api_URL}api/v1/categories`, {
+      method: "GET",
+      next: { revalidate: 60 },
+    });
+    const data = await res.json();
+    return data;
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      return { message: error.message };
+    }
+    // console.log(error);
+  }
+}
+
+export async function getSubCategories(id: string) {
+  try {
+    const res = await fetch(
+      `${process.env.Api_URL}api/v1/categories/${id}/subcategories`,
+      {
+        method: "GET",
+        next: { revalidate: 60 },
+      }
+    );
+    const data = await res.json();
+    return data;
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      return { message: error.message };
+    }
+  }
+}
