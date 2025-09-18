@@ -5,8 +5,8 @@ import { CheckoutSchemaType } from "@/schema/checkout.schema";
 
 export default async function OnlinePayment(
   cartId: string,
-  url = process.env.Next_URL,
-  formValues: CheckoutSchemaType
+  formValues: CheckoutSchemaType,
+  url?: string 
 ) {
   const Mytoken = await getMyToken();
 
@@ -14,9 +14,14 @@ export default async function OnlinePayment(
     return null;
   }
 
+  // Use provided URL, or fallback to environment variable, or use Vercel URL
+  const baseUrl = url || process.env.Next_URL || process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'http://localhost:3000';
+
   try {
     const res = await fetch(
-      `${process.env.Api_URL}api/v1/orders/checkout-session/${cartId}?url=${url}`,
+      `${process.env.Api_URL}api/v1/orders/checkout-session/${cartId}?url=${baseUrl}`,
       {
         method: "POST",
         headers: {

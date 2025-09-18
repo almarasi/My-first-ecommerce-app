@@ -40,7 +40,9 @@ export default function CheckoutPage() {
 
     if (paymentType === "online") {
       try {
-        const res = await OnlinePayment(id, "" , values);
+        // Get the current domain dynamically
+        const currentUrl = window.location.origin;
+        const res = await OnlinePayment(id, values , currentUrl);
         if (res.status === "success") {
           window.location.href = res.session.url;
         }
