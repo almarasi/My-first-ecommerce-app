@@ -41,7 +41,7 @@ export default function CheckoutPage() {
     if (paymentType === "online") {
       try {
         // Get the current domain dynamically
-        const currentUrl = "https://my-first-ecommerce-app-one.vercel.app/";
+        const currentUrl = window.location.origin;
         const res = await OnlinePayment(id, values , currentUrl);
         if (res.status === "success") {
           window.location.href = res.session.url;
