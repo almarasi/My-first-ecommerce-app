@@ -27,7 +27,7 @@ export default function MainSlider() {
             <Image
               priority
               loading="eager"
-              src="/images/sliders/mainSlider-2.jpg"
+              src="/Images/sliders/mainSlider-2.jpg"
               alt="Slide 1"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -43,7 +43,7 @@ export default function MainSlider() {
             <Image
               priority
               loading="eager"
-              src="/images/sliders/mainSlider-4.jpg"
+              src="/Images/sliders/mainSlider-4.jpg"
               alt="Slide 1"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -59,7 +59,7 @@ export default function MainSlider() {
             <Image
               priority
               loading="eager"
-              src="/images/sliders/mainSlider-3.jpg"
+              src="/Images/sliders/mainSlider-3.jpg"
               alt="Slide 1"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
