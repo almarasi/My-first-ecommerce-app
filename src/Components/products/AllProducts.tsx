@@ -12,7 +12,7 @@ export default async function AllProducts() {
   return (
     <div className="my-8 ">
       <ProductSearch allProducts={allProducts} />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-7 gap-x-5 my-8  w-[95%] mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-7 gap-x-5 my-8  w-[95%] mx-auto">
         {allProducts.map((product: ProductType) => (
           <ProductCard product={product} key={product._id} />
         ))}
