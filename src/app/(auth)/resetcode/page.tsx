@@ -104,7 +104,7 @@ export default function ResetCodePage() {
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Did not receive the code?{" "}
-              <Link href="/forgetpassword" className="text-green-600 hover:text-green-800 font-semibold transition-colors">
+              <Link href="/forgetpassword" className="cursor-pointer text-green-600 hover:text-green-800 font-semibold transition-colors">
                 Resend code
               </Link>
             </p>

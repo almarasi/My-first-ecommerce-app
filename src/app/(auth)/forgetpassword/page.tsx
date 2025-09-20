@@ -91,7 +91,7 @@ export default function ForgetPasswordPage() {
               
               <Button 
                 type="submit" 
-                className="w-full h-12 text-base font-semibold bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
+                className=" cursor-pointer w-full h-12 text-base font-semibold bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
               >
                 Send Reset Code
               </Button>
