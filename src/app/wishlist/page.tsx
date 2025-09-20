@@ -144,7 +144,7 @@ export default function Wishlist() {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Wishlist is Empty</h2>
           <p className="text-gray-600 mb-8 text-lg">
-            Save items you love to your wishlist and they'll appear here. Start exploring to find your favorites!
+            Save items you love to your wishlist and they will appear here. Start exploring to find your favorites!
           </p>
           <Link href="/products">
             <Button className="h-12 px-8 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">

@@ -64,7 +64,7 @@ export default function ForgetPasswordPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold gradient-text mb-2">Forgot Password?</h1>
-          <p className="text-gray-600">No worries! Enter your email and we'll send you a reset code</p>
+          <p className="text-gray-600">No worries! Enter your email and we will send you a reset code</p>
         </div>
 
         {/* Form Card */}

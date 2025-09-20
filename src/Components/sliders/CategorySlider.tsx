@@ -16,7 +16,7 @@ export default function CategorySlider() {
           Shop by Category
         </h2>
         <p className="text-[15px] sm:text-lg text-gray-600 max-w-2xl mx-auto">
-          Explore our diverse range of categories and find exactly what you're looking for
+          Explore our diverse range of categories and find exactly what you are looking for
         </p>
       </div>
       <CategorySwipper allCategory={allCategories} />

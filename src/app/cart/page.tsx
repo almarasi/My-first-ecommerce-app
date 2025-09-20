@@ -282,7 +282,7 @@ export default function Cart() {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Cart is Empty</h2>
           <p className="text-gray-600 mb-8 text-lg">
-            Looks like you haven't added any items to your cart yet. Start shopping to fill it up!
+            Looks like you have not added any items to your cart yet. Start shopping to fill it up!
           </p>
           <Link href="/products">
             <Button className="cursor-pointer h-12 px-8 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
