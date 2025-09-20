@@ -68,20 +68,20 @@ export default function NAVBAR() {
         rounded
         className=" px-2 sm:px-4 py-2.5 lg:w-[95%] mx-auto text-black"
       >
-        <Link href="/" className="flex items-center">
+        <Link href="/">
           <span className="self-center whitespace-nowrap text-3xl font-bold">
             Marasi
           </span>
         </Link>
-        <div className="flex md:order-2 items-center">
+        <div className="flex md:order-2 items-center mt-2 sm:mt-1">
           {session && (
-            <div>
+            <div className="space-x-1">
               <Link className="m-0 p-0" href="/cart">
                 <button className="mr-3 cursor-pointer relative">
                   {numberOfCartItems! > 0 && (
                     <Badge
                       variant="default"
-                      className="absolute top-[-13px] right-[-13px]"
+                      className="absolute top-[-13px] right-[-13px] animate-pulse bg-emerald-700"
                     >
                       {numberOfCartItems}
                     </Badge>
@@ -90,25 +90,41 @@ export default function NAVBAR() {
                 </button>
               </Link>
               <Link href="/wishlist">
-                <button className="mr-3 cursor-pointer relative">
+                <button className="mr-4 cursor-pointer relative">
                   {numberOfWishlistItems! > 0 && (
                     <Badge
                       variant="default"
-                      className="absolute top-[-13px] right-[-13px]"
+                      className="absolute top-[-13px] right-[-13px] animate-pulse bg-red-700"
                     >
                       {numberOfWishlistItems}
                     </Badge>
                   )}
-                  <Heart />
+                  <Heart className="text-gray-700 group-hover:text-red-500 transition-colors" />
                 </button>
               </Link>
             </div>
           )}
 
           {!session ? (
-            <div>
-              <Link className={`font-bold ${pathname === "/register" ? `active` : null }`} href="/register">Register</Link>
-              <Link className={`font-bold mx-2 ${pathname === "/login" ? `active` : null }`}  href="/login">
+            <div className="flex items-center space-x-2">
+              <Link 
+                className={`px-4 py-2 rounded-full font-semibold transition-all duration-200 ${
+                  pathname === "/register" 
+                    ? "bg-emerald-600 text-white shadow-lg" 
+                    : "text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                }`} 
+                href="/register"
+              >
+                Register
+              </Link>
+              <Link 
+                className={`px-4 py-2 mr-2 rounded-full font-semibold transition-all duration-200 ${
+                  pathname === "/login" 
+                    ? "bg-emerald-600 text-white shadow-lg" 
+                    : "text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                }`} 
+                href="/login"
+              >
                 Login
               </Link>
             </div>

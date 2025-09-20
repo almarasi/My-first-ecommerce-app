@@ -14,6 +14,7 @@ import getLoggedUserWishlist from "@/actions/wishlist/getUserWishlist.action";
 import removeItemFromWishlist from "@/actions/wishlist/removeWishlistItem.action";
 import WishlistAddtoCart from "../../Components/products/Wishlist/WishlistAddtoCart";
 import { WishlistCountContext } from "@/context/WishlistCountProvider";
+import Link from "next/link";
 
 export default function Wishlist() {
   const router = useRouter();
@@ -77,8 +78,11 @@ export default function Wishlist() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <LoaderCircle className="animate-spin size-[50]" />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50 flex items-center justify-center">
+        <div className="text-center">
+          <LoaderCircle className="animate-spin size-16 text-emerald-600 mx-auto mb-4" />
+          <p className="text-gray-600 text-lg">Loading your wishlist...</p>
+        </div>
       </div>
     );
   }
@@ -131,9 +135,24 @@ export default function Wishlist() {
           </div>
         </div>
       ) : (
-        <h1 className="text-center font-bold my-12 text-3xl text-emerald-700">
-          WISHLIST IS EMPTY
-        </h1>
+        <div className="text-center py-20">
+        <div className="max-w-md mx-auto">
+          <div className="w-32 h-32 mx-auto mb-8 bg-gray-100 rounded-full flex items-center justify-center">
+            <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Wishlist is Empty</h2>
+          <p className="text-gray-600 mb-8 text-lg">
+            Save items you love to your wishlist and they'll appear here. Start exploring to find your favorites!
+          </p>
+          <Link href="/products">
+            <Button className="h-12 px-8 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+              Explore Products
+            </Button>
+          </Link>
+        </div>
+      </div>
       )}
     </div>
   );

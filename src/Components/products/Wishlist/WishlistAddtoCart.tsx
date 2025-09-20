@@ -32,12 +32,12 @@ export default function WishlistAddtoCart({ id , getWishlist }: { id: string , g
           setIsDisabled(false);
           setNumberOfCartItems!(numberOfCartItems! + 1);
           setNumberOfWishlistItems?.(numberOfWishlistItems! - 1);
+          setWishlistIds!((prev) => prev.filter((itemId) => itemId !== id));
+          getWishlist()
           toast.success("product Added Successfully", {
             duration: 2000,
             position: "top-right",
           });
-          setWishlistIds!((prev) => prev.filter((itemId) => itemId !== id));
-          getWishlist()
         }
       }
     } catch (err) {
@@ -54,7 +54,7 @@ export default function WishlistAddtoCart({ id , getWishlist }: { id: string , g
     <Button
       disabled={isdisabled}
       onClick={() => Addproduct(id)}
-      className="cursor-pointer bg-white text-black border border-emerald-300 hover:bg-emerald-300 hover:text-white transition duration-300 p-3 sm:p-6 text-[13px] sm:text-lg"
+      className="cursor-pointer text-white border bg-emerald-500 hover:bg-emerald-800  transition duration-300 p-3 sm:p-6 text-[13px] sm:text-lg"
     >
       Add to cart
     </Button>

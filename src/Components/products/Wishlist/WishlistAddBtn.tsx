@@ -80,7 +80,7 @@ export default function WishlistAddBtn({ id }: { id: string }) {
     >
       <Heart
         className={`${
-          isClicked ? "text-red-600" : "text-black"
+          isClicked ? "text-red-700" : "text-black"
         } size-[25px] cursor-pointer`}
       />
     </button>

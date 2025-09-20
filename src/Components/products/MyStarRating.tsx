@@ -8,6 +8,7 @@ export default function MyStarRating({ product }: { product: ProductType }) {
     <StarRating
       initialRating={Math.floor(product.ratingsAverage)}
       dimension={5}
+      isReadOnly={true}
     />
   );
 }

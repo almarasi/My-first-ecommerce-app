@@ -153,8 +153,11 @@ export default function Cart() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <LoaderCircle className="animate-spin size-[50]" />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <LoaderCircle className="animate-spin size-16 text-emerald-600 mx-auto mb-4" />
+          <p className="text-gray-600 text-lg">Loading your cart...</p>
+        </div>
       </div>
     );
   }
@@ -270,9 +273,24 @@ export default function Cart() {
           </div>
         </div>
       ) : (
-        <h1 className="text-center font-bold my-12 text-3xl text-emerald-700">
-          CART IS EMPTY
-        </h1>
+        <div className="text-center py-20">
+        <div className="max-w-md mx-auto">
+          <div className="w-32 h-32 mx-auto mb-8 bg-gray-100 rounded-full flex items-center justify-center">
+            <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
+            </svg>
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Cart is Empty</h2>
+          <p className="text-gray-600 mb-8 text-lg">
+            Looks like you haven't added any items to your cart yet. Start shopping to fill it up!
+          </p>
+          <Link href="/products">
+            <Button className="cursor-pointer h-12 px-8 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Start Shopping
+            </Button>
+          </Link>
+        </div>
+      </div>
       )}
     </div>
   );

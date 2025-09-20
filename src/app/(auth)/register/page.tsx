@@ -19,6 +19,7 @@ import { registerSchema } from "@/schema/register.schema";
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Register() {
   const [errMsg, setErrMsg] = useState(null);
@@ -66,86 +67,130 @@ export default function Register() {
   }
 
   return (
-    <div className="w-[80%] sm:w-[75%] md:w-[70%] lg:w-[60%] xl:w-[50%] mx-auto my-25">
-      <h1 className="text-3xl font-bold tracking-tighter">Register </h1>
-      {errMsg && (
-        <h2 className="text-center text-red-600 text-lg mt-4">{errMsg}</h2>
-      )}
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(HandleRegister)}>
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem className="mt-5">
-                <FormControl>
-                  <Input placeholder="Your Name" {...field} type="text" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem className="mt-5">
-                <FormControl>
-                  <Input placeholder="Your Email" {...field} type="email" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem className="mt-5">
-                <FormControl>
-                  <Input
-                    placeholder="Your Password"
-                    {...field}
-                    type="password"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="rePassword"
-            render={({ field }) => (
-              <FormItem className="mt-5">
-                <FormControl>
-                  <Input
-                    placeholder="Your RePassword"
-                    {...field}
-                    type="password"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem className="mt-5">
-                <FormControl>
-                  <Input placeholder="Your Phone" {...field} type="tel" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" className="w-full mt-5 cursor-pointer">
-            Register
-          </Button>
-        </form>
-      </Form>
+    <div className="mt-20 min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h1 className="text-4xl font-bold gradient-text mb-2">Create Account</h1>
+          <p className="text-gray-600">Join us and start your shopping journey</p>
+        </div>
+
+        {/* Form Card */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-8 animate-fadeInUp">
+          {errMsg && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-red-600 text-sm text-center">{errMsg}</p>
+            </div>
+          )}
+          
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(HandleRegister)} className="space-y-5">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input 
+                        placeholder="Full Name" 
+                        {...field} 
+                        type="text"
+                        className="h-12 text-base border-2 border-gray-200 focus:border-purple-500 transition-colors"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input 
+                        placeholder="Email Address" 
+                        {...field} 
+                        type="email"
+                        className="h-12 text-base border-2 border-gray-200 focus:border-purple-500 transition-colors"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input 
+                        placeholder="Phone Number" 
+                        {...field} 
+                        type="tel"
+                        className="h-12 text-base border-2 border-gray-200 focus:border-purple-500 transition-colors"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Password"
+                        {...field}
+                        type="password"
+                        className="h-12 text-base border-2 border-gray-200 focus:border-purple-500 transition-colors"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="rePassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Confirm Password"
+                        {...field}
+                        type="password"
+                        className="h-12 text-base border-2 border-gray-200 focus:border-purple-500 transition-colors"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <Button 
+                type="submit" 
+                className="w-full h-12 text-base font-semibold bg-gradient-to-r from-emerald-800 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg mt-6"
+              >
+                Create Account
+              </Button>
+            </form>
+          </Form>
+
+          {/* Sign In Link */}
+          <div className="mt-6 text-center">
+            <p className="text-gray-600">
+              Already have an account?{" "}
+              <Link href="/login" className="text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+                Sign in
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

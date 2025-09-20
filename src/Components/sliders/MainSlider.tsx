@@ -23,7 +23,7 @@ export default function MainSlider() {
         keyboard={{ enabled: true }}
       >
         <SwiperSlide>
-          <div className="w-full h-screen relative">
+          <div className="w-full h-screen relative overflow-hidden">
             <Image
               priority
               loading="eager"
@@ -31,7 +31,7 @@ export default function MainSlider() {
               alt="Slide 1"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
             <span className="absolute top-[70%] text-white font-bold text-5xl md:text-6xl w-full text-center">
               accessories
@@ -39,15 +39,15 @@ export default function MainSlider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-screen relative">
+          <div className="w-full h-screen relative overflow-hidden">
             <Image
               priority
               loading="eager"
               src="/Images/sliders/mainSlider-4.jpg"
-              alt="Slide 1"
+              alt="Slide 2"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
             <span className="absolute top-[70%] text-white font-bold text-5xl md:text-6xl w-full text-center">
               new
@@ -55,15 +55,15 @@ export default function MainSlider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-screen relative">
+          <div className="w-full h-screen relative overflow-hidden">
             <Image
               priority
               loading="eager"
               src="/Images/sliders/mainSlider-3.jpg"
-              alt="Slide 1"
+              alt="Slide 3"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
             <span className="absolute top-[70%] text-white font-bold text-5xl md:text-6xl w-full text-center">
               baggy trousers
