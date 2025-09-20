@@ -18,7 +18,7 @@ export default function ProductCard({ product }: { product: ProductType }) {
     <div className="group">
       <Card className="p-0 card gap-1 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white border-0 rounded-xl">
         {/* Action Buttons */}
-        <div className="absolute z-10 top-10 right-[-50px] group-hover:right-3 transition-all duration-500 flex flex-col gap-3">
+        <div className="absolute z-10 top-20 right-[-50px] group-hover:right-3 transition-all duration-500 flex flex-col gap-3">
           <ProductCardAddBtn id={product._id} />
           <button className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-all duration-300 hover:text-blue-500 hover:bg-white">
             <Link href={`/products/${product._id}`}>
