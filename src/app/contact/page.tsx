@@ -14,7 +14,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            We would love to hear from you. Send us a message and we will respond as soon as possible.
           </p>
         </div>
 
