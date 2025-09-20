@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NAVBAR from "@/Components/Navbar/Navbar";
+import Footer from "@/Components/Footer/Footer";
 import { Toaster } from "@/Components/ui/sonner";
 import MySessionProvider from "../context/MySessionProvider";
 import CartCountProvider from "@/context/CartCountProvider";
@@ -38,9 +39,14 @@ export default function RootLayout({
         <MySessionProvider>
           <CartCountProvider>
             <WishlistCountProvider>
-              <NAVBAR />
+              <div className="min-h-screen flex flex-col">
+                <NAVBAR />
+                <main className="flex-1">
+                  {children}
+                </main>
+                <Footer />
+              </div>
               <Toaster />
-              {children}
             </WishlistCountProvider>
           </CartCountProvider>
         </MySessionProvider>

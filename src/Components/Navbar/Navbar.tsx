@@ -69,7 +69,7 @@ export default function NAVBAR() {
         className=" px-2 sm:px-4 py-2.5 lg:w-[95%] mx-auto text-black"
       >
         <Link href="/">
-          <span className="self-center whitespace-nowrap text-3xl font-bold">
+          <span className="self-center whitespace-nowrap text-3xl font-bold gradient-text">
             Marasi
           </span>
         </Link>
