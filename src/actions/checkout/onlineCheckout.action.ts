@@ -15,9 +15,7 @@ export default async function OnlinePayment(
   }
 
   // Use provided URL, or fallback to environment variable, or use Vercel URL
-  const baseUrl = url || process.env.Next_URL || process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}` 
-    : 'http://localhost:3000';
+  const baseUrl = url || process.env.Next_URL || process.env.VERCEL_URL
 
   try {
     const res = await fetch(
